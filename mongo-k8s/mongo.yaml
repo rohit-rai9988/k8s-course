@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Mysqldb-deployment
+  labels:
+    app: Mysqldb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Mysqldb
+  template:
+    metadata:
+      labels:
+        app: Mysqldb
+    spec:
+      containers:
+      - name: Mysqldb
+        image: mysql:5.7
+        
